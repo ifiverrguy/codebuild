@@ -14,7 +14,9 @@ phases:
       - echo $LOCAL_SECRET_VAR
       - export APPLE=$LOCAL_SECRET_VAR
       - ls
-      - envsubst < appsettings.dev.json
+      - envsubst < appsettings.dev.json > new.json
+      - cat new.json
+      - ( echo "cat <<EOF" ; cat appsettings.dev.json; echo EOF ) | sh
       - cat appsettings.dev.json
   build:
     commands:
