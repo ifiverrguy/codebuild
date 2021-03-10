@@ -12,6 +12,7 @@ phases:
       python: 3.8
     commands:
       - echo $LOCAL_SECRET_VAR
+      - export APPLE=$LOCAL_SECRET_VAR
       - ls
       - envsubst < appsettings.dev.json
       - cat appsettings.dev.json
