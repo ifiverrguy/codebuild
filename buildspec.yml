@@ -13,6 +13,8 @@ phases:
     commands:
       - echo $LOCAL_SECRET_VAR
       - ls
+      - envsubst < appsettings.dev.json
+      - cat appsettings.dev.json
   build:
     commands:
       - echo Build started on `date`
